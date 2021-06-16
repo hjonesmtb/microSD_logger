@@ -91,7 +91,8 @@ module controller_fifo(input clk_50mhz, output SD_SCK, output SD_CMD,
 		
 		data <= data + 1;
 		
-		write_block[write_index] <= data;	
+		write_block[write_index] <= data;
+			
 		write_index <= (write_index == 511) ? 0 : write_index + 1;
 		
 		block_ready <= write_index == 511;
